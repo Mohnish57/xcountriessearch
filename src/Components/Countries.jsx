@@ -14,6 +14,7 @@ function Countries({ data }) {
           return (
             <div key={flag.cca2} className="flagComponent">
               <img
+                loading="lazy"
                 src={flag.flags.png}
                 alt={flag.flags.alt}
                 width="100"

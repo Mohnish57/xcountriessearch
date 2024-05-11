@@ -11,10 +11,13 @@ function SearchBar() {
   const [filteredData, setFilteredData] = useState([]);
 
   const fetchData = async () => {
-    console.log("fetchData function");
-    const response = await axios.get(API_END_POINT);
-    setData(response.data);
-    setFilteredData(response.data);
+    try {
+      const response = await axios.get(API_END_POINT);
+      setData(response.data);
+      setFilteredData(response.data);
+    } catch (e) {
+      console.log(e);
+    }
   };
 
   const handleSearch = (e) => {
@@ -22,7 +25,6 @@ function SearchBar() {
   };
 
   useEffect(() => {
-    console.log("empty array useEffect");
     fetchData();
   }, []);
 
@@ -38,7 +40,6 @@ function SearchBar() {
     }
   }, [input]);
 
-  //   console.log(data);
   return (
     <>
       <div className="searchBox">
