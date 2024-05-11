@@ -12,7 +12,7 @@ function Countries({ data }) {
       <div className="flagsSection">
         {data.map((flag) => {
           return (
-            <div key={flag.cca2} className="flagComponent">
+            <div key={flag.cca2} className="countryCard">
               <img
                 loading="lazy"
                 src={flag.flags.png}
